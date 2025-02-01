@@ -1,70 +1,50 @@
-# Getting Started with Create React App
+# full-stack File Management System with AWS S3 application
+This project is a full-stack File Management System that allows users to upload, download, and manage files with integration to AWS S3 for file storage. The front-end is built with ReactJS and the back-end is powered by Spring Boot.
+## Features
+- **Image Upload**: Users can upload images (jpg) through a file input.
+- **Image Storage**: The image is uploaded to AWS S3 and stored with a URL.
+- **Product Entity**: Image URLs are stored in the `Product` entity in the database.
+- **Image Retrieval**: Users can view a list of products with their respective images retrieved from S3.
+# Prerequisites
+Before you start, ensure you have the following installed:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- Node.js (for React)
+- Java 11+ (for Spring Boot)
+- Maven or Gradle (for Spring Boot)
+- AWS Account (for AWS S3 setup)
+# Deploy site on netlify
+Project Url :https://awss3imageupload.netlify.app/uploadto-AWS
+## Frontend(ReactJs)
 
-## Available Scripts
+- Html
+- Css
+- Bootstrap
+- Javascrip
+- ReactJs
 
-In the project directory, you can run:
+## Backend(Spring Boot)
+- JDBC Servlets
+- Hibernate ORM
+- Spring Data Jpa
+- File Storage: AWS S3
+- Spring Boot
+- MySql Database
+- post man
+## Screenshots
+# 
+# Input Form Page (Product Image Upload)
+The Product Image Upload page allows users to upload product images to the system, which are stored on AWS S3. These images are then linked to the product details and saved to the database. The form accepts image files in .jpg format and limits the file size to 1MB.
+![register](https://github.com/bhaskar-nayak/E-commerce-full-stack-application/blob/master/Screenshot%20(8).png?raw=true)
+## How It Works
+- Step 1: User selects a .jpg image file from the file input.
+- Step 2: User clicks Upload to submit the form.
+- The image is sent to the Spring Boot back-end, which validates the file type and size.
+- The image is uploaded to AWS S3, and the URL is returned.
+- The URL is then saved in the database alongside the product's name and price.
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# Image Rendering on the Images Page
+After the product image is uploaded and the product details are saved to the database, the images can be viewed on the Images Page using the List Images endpoint. The images are retrieved from the AWS S3 bucket by their stored URL, which is associated with each product in the database
+![login](https://github.com/bhaskar-nayak/E-commerce-full-stack-application/blob/master/Screenshot%20(7).png?raw=true)
+# Endpoints:
+Add Product (POST /v1/imageProduct/add-products): Uploads the product image to AWS S3 and stores the image URL with the product details in the database.
+List Products (GET /v1/imageProduct/list-products): Retrieves all products along with their image URLs and displays them on the Images Page.
