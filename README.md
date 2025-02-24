@@ -8,12 +8,12 @@ This project is a full-stack File Management System that allows users to upload,
 # Prerequisites
 Before you start, ensure you have the following installed:
 
-- Node.js (for React)
+- ( React)
 - Java 11+ (for Spring Boot)
 - Maven or Gradle (for Spring Boot)
 - AWS Account (for AWS S3 setup)
 # Deploy site on netlify
-Project Url :https://awss3imageupload.netlify.app/uploadto-AWS
+Project Url :https://awss3imageupload.netlify.app/
 ## Frontend(ReactJs)
 
 - Html
